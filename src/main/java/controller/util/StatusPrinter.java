@@ -1,0 +1,33 @@
+package controller.util;
+
+import java.util.Collection;
+
+public class StatusPrinter {
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
+
+    public static void msg(String msg) {
+        System.out.print(msg);
+    }
+
+    public static void msgln(String msg) {
+        System.out.println(msg);
+    }
+
+    public static  void msgfor(String ... msgs) {
+        for (String m : msgs) {
+            msgln(m);
+        }
+    }
+
+    public static void msgfor(Collection<String> s) {
+        s.forEach(StatusPrinter::msgln);
+    }
+}
