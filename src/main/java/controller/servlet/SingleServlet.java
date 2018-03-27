@@ -1,6 +1,7 @@
 package controller.servlet;
 
 import controller.command.ActionFactory;
+import controller.exception.AuthorizedException;
 import controller.exception.BadRequestException;
 import controller.exception.ForbiddenException;
 import controller.exception.PageNotFoundException;
@@ -39,9 +40,12 @@ public final class SingleServlet extends HttpServlet {
             resp.sendError(BadRequestException.CODE);
         } catch (ForbiddenException e403) {
             resp.sendError(ForbiddenException.CODE);
+        } catch (AuthorizedException e401) {
+            resp.sendError(401);
         } catch (Throwable internalServerError) {
-            resp.sendError(500);
             internalServerError.printStackTrace();
+            resp.sendError(500);
+            return;
         }
         StatusPrinter.msgln(StatusPrinter.ANSI_GREEN +
                 "The request was processed successful, the response was sent" +

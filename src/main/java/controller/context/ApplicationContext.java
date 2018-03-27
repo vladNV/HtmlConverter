@@ -2,6 +2,8 @@ package controller.context;
 
 import controller.command.ConvertPdfCmd;
 import model.repo.UnitWorkRepo;
+import model.service.ConvertPdfService;
+import model.service.LoginService;
 
 import java.util.HashMap;
 
@@ -17,7 +19,8 @@ public class ApplicationContext {
     static {
         beans = new HashMap<>();
         beans.put("repos", new HashMap<String, UnitWorkRepo>());
-        beans.put("ConvertPdfService", new ConvertPdfCmd());
+        beans.put("ConvertPdfService", new ConvertPdfService());
+        beans.put("LoginService", new LoginService());
     }
 
     public Object getBean(String key) {

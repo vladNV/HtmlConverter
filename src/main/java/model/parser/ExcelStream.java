@@ -49,6 +49,17 @@ public class ExcelStream implements AutoCloseable {
         return this;
     }
 
+    public List<String> getValueFrom(int columnNumber, char separator) {
+        List<String> values = new ArrayList<>();
+        Cell cell;
+        for (Row row : sheet) {
+            cell = row.getCell(columnNumber);
+            if (cell != null) {
+                values.add(cell.toString().trim() + separator);
+            }
+        }
+        return values;
+    }
 
     public List<String> getValueFrom(int columnNumber) {
         List<String> values = new ArrayList<>();

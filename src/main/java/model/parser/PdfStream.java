@@ -1,7 +1,6 @@
 package model.parser;
 
 import com.itextpdf.text.*;
-import com.itextpdf.text.html.simpleparser.HTMLWorker;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.tool.xml.XMLWorker;
@@ -42,7 +41,7 @@ public class PdfStream implements AutoCloseable {
         return this;
     }
 
-    // need to change font's path
+    // need to change font path
     public PdfStream createPdf() {
         try {
             BaseFont bf = BaseFont.createFont
@@ -56,17 +55,17 @@ public class PdfStream implements AutoCloseable {
     }
 
 
-    public void writeAsTable(List<String> lines) {
+    public void writeAsTable(String[][] lines) {
         StringBuilder content = new StringBuilder("<html><body><table>");
         // here will be table header
-        for (String row : lines) {
+        for (String[] row : lines) {
             content.append("<tr>");
-            for (String cell : row.split(";")) {
+            for (String cell : row) {
                 content.append("<td>");
                 content.append(cell);
                 content.append("</td>");
             }
-            content.append("<tr>");
+            content.append("</tr>");
         }
         content.append("</table></body></html>");
         InputStream is = new ByteArrayInputStream

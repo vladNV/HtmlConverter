@@ -20,8 +20,10 @@ public class ActionFactory {
         actions.put("controller.command.OpenSenderCmd.java", new OpenSenderCmd());
         actions.put("controller.command.ConvertPdfCmd.java", new ConvertPdfCmd());
         actions.put("controller.command.LoginCmd.java", new LoginCmd());
+        actions.put("controller.command.OpenConvertCmd.java", new OpenConvertCmd());
         actions.put("controller.command.OpenMailCmd.java", new OpenMailCmd());
         actions.put("controller.command.SendMailCmd.java", new SendMailCmd());
+        actions.put("controller.command.OpenLoginCmd.java", new OpenLoginCmd());
     }
 
     public static Action execute(String request, String type) {

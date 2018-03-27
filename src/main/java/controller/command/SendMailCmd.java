@@ -28,6 +28,7 @@ public class SendMailCmd implements Action {
         String to = req.getParameter("to");
         String subject = req.getParameter("subject");
         String text = req.getParameter("text");
+        String message = from + "\n" + text;
         UnitWorkRepo repo = ActionFactory.extractUnitWorkRepo(login);
         if (to == null || from == null || login == null
                 || subject == null || text == null) {
@@ -36,8 +37,7 @@ public class SendMailCmd implements Action {
         Sender sender = new Sender(bundle.getString("mail-login"),
                 bundle.getString("mail-password"),
                 (String) repo.pull("pdf"));
-        sender.send(subject, text, to);
-        // return page of result
-        return null;
+        sender.send(subject, message, to);
+        return () -> req.getRequestDispatcher(Path.CONGRATULATION_PATH).forward(req, resp);
     }
 }

@@ -20,6 +20,7 @@
                             <button class="btn-success btn" name="upload">
                                 Upload</button>
                         </div>
+                        <input type="hidden" name="login" value="${sessionScope.login}">
                     </form>
                 </div>
                 <div class="col-sm-2"></div>

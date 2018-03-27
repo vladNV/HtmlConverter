@@ -1,12 +1,13 @@
 package controller.command;
 
+import controller.context.ApplicationContext;
+import controller.exception.AuthorizedException;
 import controller.exception.BadRequestException;
+import model.service.LoginService;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
 
 public class LoginCmd implements Action {
 
@@ -19,9 +20,13 @@ public class LoginCmd implements Action {
         String password = req.getParameter("password");
         if (login == null || password == null)
             throw new BadRequestException("bad request");
-        // check login & pass in database here
-        // TODO FIX ME
-        session.setAttribute("user", login);
-        return () -> resp.sendRedirect(Path.SENDER_URI);
+        LoginService service = (LoginService) ApplicationContext
+                .getInstance()
+                .getBean("LoginService");
+        if (!service.authorisation(login, password)) {
+            throw new AuthorizedException();
+        }
+        session.setAttribute("login", login);
+        return () -> resp.sendRedirect(req.getContextPath() + "/" + Path.SENDER_URI);
     }
 }

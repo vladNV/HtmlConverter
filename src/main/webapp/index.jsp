@@ -14,6 +14,10 @@
         <div class="col-sm-12">
             <div class="col-sm-2"></div>
             <div class="col-sm-8 main-div">
+                <a class="ref" href="site/sign">
+                    Авторизироваться
+                </a>
+                <br>
                 <a class="ref" href="site/sender">
                     Загрузить excel и отправить на email
                 </a>

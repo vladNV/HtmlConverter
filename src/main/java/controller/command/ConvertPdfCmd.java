@@ -3,10 +3,14 @@ package controller.command;
 import controller.context.ApplicationContext;
 import controller.exception.BadRequestException;
 import model.repo.UnitWorkRepo;
+import model.service.ConvertPdfService;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.List;
 
 public class ConvertPdfCmd implements Action {
 
@@ -15,17 +19,14 @@ public class ConvertPdfCmd implements Action {
                          HttpServletResponse resp) {
         HttpSession session = req.getSession();
         String login = (String) session.getAttribute("login");
-        String sheet = req.getParameter("sheet");
-        String column = req.getParameter("column");
-        String sheetWithTable = req.getParameter("sheetWithTable");
-        String columnWithTable = req.getParameter("columnWithTable");
         UnitWorkRepo repo = ActionFactory.extractUnitWorkRepo(login);
-        if (sheet == null || column == null
-                || login == null || repo == null
-                    || sheetWithTable == null || columnWithTable == null) {
+        if (login == null) {
             throw new BadRequestException("null parameters or session's values");
         }
-        String path = (String) repo.pull("path");
-        return null;
+        ConvertPdfService service = (ConvertPdfService) ApplicationContext
+                .getInstance()
+                .getBean("ConvertPdfService");
+        List<String> list = service.convertPdf(repo);
+        return () -> req.getRequestDispatcher(Path.MAIL_PATH).forward(req, resp);
     }
 }

@@ -3,7 +3,9 @@ package model.rest;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 import controller.context.ApplicationContext;
-import model.parser.ExcelStream;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.core.UriBuilder;
 import model.repo.UnitWorkRepo;
 
 import javax.ws.rs.*;
@@ -19,12 +21,14 @@ import java.util.ResourceBundle;
 public class FileUploadService {
     private static final String UPLOAD_FOLDER;
     private static final int BATCH_SIZE = 1024;
+    private static final String PATH_CONTEXT;
     private static final int SIZE = 32;
 
     static {
         try {
             ResourceBundle bundle = ResourceBundle.getBundle("config");
             UPLOAD_FOLDER = bundle.getString("upload-folder");
+            PATH_CONTEXT = bundle.getString("path-context");
         } catch (Throwable e) {
             throw new RuntimeException("exception at config loading", e);
         }
@@ -33,11 +37,11 @@ public class FileUploadService {
     @POST
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     public Response uploadExcelFile(
-            @DefaultValue("null") @QueryParam("login") String login,
+            @FormDataParam("login") String login,
             @FormDataParam("xls") InputStream uploadedInputStream,
             @FormDataParam("xls") FormDataContentDisposition content)
             throws URISyntaxException {
-        if (login.equals("null")) {
+        if (login == null) {
             return Response.status(400).entity("Invalid login").build();
         }
         if (uploadedInputStream == null || content == null) {
@@ -54,13 +58,13 @@ public class FileUploadService {
                 System.currentTimeMillis() + ".xlsx";
         try {
             saveToFile(uploadedInputStream, uploadedFileLocation);
+            uploadedInputStream.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         setPathToUnitWork(login, uploadedFileLocation);
-        return Response.temporaryRedirect(
-                new URI(controller.command.Path.CONVERT_URI)
-        ).build();
+        URI uri = new URI(PATH_CONTEXT + controller.command.Path.OPEN_EXCEL_URI);
+        return Response.seeOther(uri).build();
     }
 
     private void setPathToUnitWork(String login, String path) {
