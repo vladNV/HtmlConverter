@@ -21,8 +21,7 @@ create table file
 ;
 
 create index file_client_userId_fk
-  on file (uploader)
-;
+  on file (uploader);
 
 create table mail
 (
