@@ -24,6 +24,7 @@ public class ActionFactory {
         actions.put("controller.command.OpenMailCmd.java", new OpenMailCmd());
         actions.put("controller.command.SendMailCmd.java", new SendMailCmd());
         actions.put("controller.command.OpenLoginCmd.java", new OpenLoginCmd());
+        actions.put("controller.command.LogoutCmd.java", new LogoutCmd());
     }
 
     public static Action execute(String request, String type) {

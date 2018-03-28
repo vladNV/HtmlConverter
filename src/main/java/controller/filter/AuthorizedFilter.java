@@ -26,10 +26,11 @@ public class AuthorizedFilter implements Filter {
         pages.put("/rest/upload", 2);
         pages.put("/site/login", 1);
         pages.put("/site/sign", 1);
+        pages.put("/site/logout", 0);
         pages.put("/", 0);
         pages.put("/bootstrap-3.3.7-dist/js/bootstrap.min.js",0);
         pages.put("/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css",0);
-        pages.put("/css/styles.css",0);
+        pages.put("/css/styles.css", 0);
         pages.put("/bootstrap-3.3.7-dist/css/bootstrap.min.css", 0);
     }
 

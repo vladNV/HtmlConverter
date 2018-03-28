@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class File {
     @Id
     @Column(name = "fileId")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "path", nullable = false)
@@ -27,32 +27,40 @@ public class File {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getType() {
+        return type;
+    }
+
+    public File setType(String type) {
+        this.type = type;
+        return this;
     }
 
     public String getPath() {
         return path;
     }
 
-    public void setPath(String path) {
+    public File setPath(String path) {
         this.path = path;
+        return this;
     }
 
     public LocalDateTime getCreated() {
         return created;
     }
 
-    public void setCreated(LocalDateTime created) {
+    public File setCreated(LocalDateTime created) {
         this.created = created;
+        return this;
     }
 
     public Long getSizeKb() {
         return sizeKb;
     }
 
-    public void setSizeKb(Long sizeKb) {
+    public File setSizeKb(Long sizeKb) {
         this.sizeKb = sizeKb;
+        return this;
     }
 
     @Override

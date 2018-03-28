@@ -3,8 +3,8 @@ package model.parser;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.BaseFont;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.tool.xml.XMLWorker;
 import com.itextpdf.tool.xml.XMLWorkerHelper;
+import com.itextpdf.tool.xml.pipeline.css.CSSResolver;
 
 
 import java.io.*;
@@ -56,7 +56,7 @@ public class PdfStream implements AutoCloseable {
 
 
     public void writeAsTable(String[][] lines) {
-        StringBuilder content = new StringBuilder("<html><body><table>");
+        StringBuilder content = new StringBuilder("\n\n<html><body><table border=\"1\" cellpadding=\"15\">");
         // here will be table header
         for (String[] row : lines) {
             content.append("<tr>");

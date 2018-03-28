@@ -5,6 +5,7 @@ import model.parser.PdfStream;
 import model.repo.UnitWorkRepo;
 import model.util.MathHelper;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -23,13 +24,20 @@ public class ConvertPdfService {
 
     static {
         resource = ResourceBundle.getBundle("config");
-        SHEET_LIST = Integer.parseInt(resource.getString("sheet-list"));
-        SHEET_TABLE = Integer.parseInt(resource.getString("sheet-table"));
-        COLUMN_LIST_0 = Integer.parseInt(resource.getString("column-list"));
-        COLUMN_TABLE_0 = Integer.parseInt(resource.getString("column-table-0"));
-        COLUMN_TABLE_1 = Integer.parseInt(resource.getString("column-table-1"));
-        COLUMN_TABLE_2 = Integer.parseInt(resource.getString("column-table-2"));
-        COLUMN_TABLE_3 = Integer.parseInt(resource.getString("column-table-3"));
+        SHEET_LIST = Integer.parseInt(resource
+                .getString("sheet-list"));
+        SHEET_TABLE = Integer.parseInt(resource
+                .getString("sheet-table"));
+        COLUMN_LIST_0 = Integer.parseInt(resource
+                .getString("column-list"));
+        COLUMN_TABLE_0 = Integer.parseInt(resource
+                .getString("column-table-0"));
+        COLUMN_TABLE_1 = Integer.parseInt(resource
+                .getString("column-table-1"));
+        COLUMN_TABLE_2 = Integer.parseInt(resource
+                .getString("column-table-2"));
+        COLUMN_TABLE_3 = Integer.parseInt(resource
+                .getString("column-table-3"));
     }
 
     public List<String> convertPdf(UnitWorkRepo repo) {
@@ -59,14 +67,11 @@ public class ConvertPdfService {
         }
         path = path.replaceAll("(xlsx|xls)", "pdf");
         try (PdfStream stream = new PdfStream()){
-                stream
-                    .setPath(path)
-                    .createPdf()
-                    .opendocument()
-                    .writeLines(lines);
+                stream.setPath(path).createPdf().opendocument().writeLines(lines);
             table = MathHelper.transport(table);
                 stream.writeAsTable(table);
             repo.push("pdf", path);
+            repo.push("size", new File(path).length());
         } catch (Exception e) {
             e.printStackTrace();
         }

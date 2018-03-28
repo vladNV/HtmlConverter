@@ -1,6 +1,6 @@
 package model.service;
 
-import model.HibernateSession;
+import model.HibernateApplication;
 import model.domain.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -9,7 +9,7 @@ import org.hibernate.query.Query;
 public class LoginService {
 
     public boolean authorisation(String login, String password) {
-        HibernateSession hibernate = new HibernateSession();
+        HibernateApplication hibernate = new HibernateApplication();
         try (Session session = hibernate.session().openSession()){
            Transaction ts = session.beginTransaction();
            Query<User> query = session.createQuery(
