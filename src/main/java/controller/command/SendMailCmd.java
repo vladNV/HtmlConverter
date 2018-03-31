@@ -33,12 +33,16 @@ public class SendMailCmd implements Action {
         String to = req.getParameter("to");
         String subject = req.getParameter("subject");
         String text = req.getParameter("text");
-        String message = from + "\n" + text;
+        String customer = req.getParameter("customer");
+        String signatureDate = req.getParameter("signature-date");
+        String orderNum = req.getParameter("order-num");
         UnitWorkRepo repo = ActionFactory.extractUnitWorkRepo(login);
         if (to == null || from == null || login == null
-                || subject == null || text == null) {
+                || subject == null || text == null || orderNum == null
+                                || customer == null || signatureDate == null) {
             throw new BadRequestException("null data");
         }
+        String message = from + "\n" + text;
         String pdfPath = (String)repo.pull("pdf");
         Sender sender = new Sender(bundle.getString("mail-login"),
                 bundle.getString("mail-password"),
@@ -48,12 +52,6 @@ public class SendMailCmd implements Action {
                 .getInstance()
                 .getBean("DatabaseService");
 
-        File file = new File()
-                .setCreated(LocalDateTime.now())
-                .setPath(pdfPath)
-                .setSizeKb(10L)
-                .setType("PDF");
-
         Mail mail = new Mail()
                 .setUserLogin(login)
                 .setText(text)
@@ -61,8 +59,18 @@ public class SendMailCmd implements Action {
                 .setTo(to)
                 .setSubject(subject);
 
+        File file = new File()
+                .setCreated(LocalDateTime.now())
+                .setPath(pdfPath)
+                .setSizeKb(10L)
+                .setCustomer(customer)
+                .setSignatureDate(signatureDate)
+                .setOrderNum(orderNum)
+                .setType("PDF");
+
         serv.save(mail);
         serv.save(file);
         return () -> req.getRequestDispatcher(Path.CONGRATULATION_PATH).forward(req, resp);
     }
+
 }

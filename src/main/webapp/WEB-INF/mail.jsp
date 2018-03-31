@@ -15,6 +15,19 @@
                 <form method="post"
                       action="${pageContext.request.contextPath}/site/mail">
                     <div class="form-group">
+                        <input class="form-control" id="customer"
+                            name="customer" required placeholder="Заказчик">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="order-num"
+                               name="order-num" required placeholder="Номер договора">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="signature-date"
+                               name="signature-date" required placeholder="Дата подписания">
+                    </div>
+                    <hr>
+                    <div class="form-group">
                         <input class="form-control" id="from"
                                name="from" placeholder="Отправителя (необязательно)">
                     </div>

@@ -23,6 +23,15 @@ public class File {
     @Column(name = "file_type", nullable = false)
     private String type;
 
+    @Column(name = "order_num", nullable = false)
+    private String orderNum;
+
+    @Column(name = "customer", nullable = false)
+    private String customer;
+
+    @Column(name = "signature_date", nullable = false)
+    private String signatureDate;
+
     public Long getId() {
         return id;
     }
@@ -60,6 +69,33 @@ public class File {
 
     public File setSizeKb(Long sizeKb) {
         this.sizeKb = sizeKb;
+        return this;
+    }
+
+    public String getOrderNum() {
+        return orderNum;
+    }
+
+    public File setOrderNum(String orderNum) {
+        this.orderNum = orderNum;
+        return this;
+    }
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public File setCustomer(String customer) {
+        this.customer = customer;
+        return this;
+    }
+
+    public String getSignatureDate() {
+        return signatureDate;
+    }
+
+    public File setSignatureDate(String signatureDate) {
+        this.signatureDate = signatureDate;
         return this;
     }
 

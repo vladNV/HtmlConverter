@@ -20,20 +20,19 @@ public class AuthorizedFilter implements Filter {
     private static final HashMap<String, Integer> pages = new HashMap<>();
 
     static {
-        String path = ResourceBundle.getBundle("config").getString("war-name");
-        pages.put(path + "/site/sender", 2);
-        pages.put(path + "/site/convert", 2);
-        pages.put(path + "/site/openExcel", 2);
-        pages.put(path + "/site/mail", 2);
-        pages.put(path + "/rest/upload", 2);
-        pages.put(path + "/site/login", 1);
-        pages.put(path + "/site/sign", 1);
-        pages.put(path + "/site/logout", 0);
-        pages.put(path + "/", 0);
-        pages.put(path + "/bootstrap-3.3.7-dist/js/bootstrap.min.js",0);
-        pages.put(path + "/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css",0);
-        pages.put(path + "/css/styles.css", 0);
-        pages.put(path + "/bootstrap-3.3.7-dist/css/bootstrap.min.css", 0);
+        pages.put("/site/sender", 2);
+        pages.put("/site/convert", 2);
+        pages.put("/site/openExcel", 2);
+        pages.put("/site/mail", 2);
+        pages.put("/rest/upload", 2);
+        pages.put("/site/login", 1);
+        pages.put("/site/sign", 1);
+        pages.put("/site/logout", 0);
+        pages.put("/", 0);
+        pages.put("/bootstrap-3.3.7-dist/js/bootstrap.min.js",0);
+        pages.put("/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css",0);
+        pages.put("/css/styles.css", 0);
+        pages.put("/bootstrap-3.3.7-dist/css/bootstrap.min.css", 0);
     }
 
     @Override
@@ -58,7 +57,5 @@ public class AuthorizedFilter implements Filter {
 
 
     @Override
-    public void destroy() {
-
-    }
+    public void destroy() { }
 }

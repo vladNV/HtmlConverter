@@ -26,7 +26,7 @@ public class ConvertPdfCmd implements Action {
         ConvertPdfService service = (ConvertPdfService) ApplicationContext
                 .getInstance()
                 .getBean("ConvertPdfService");
-        List<String> list = service.convertPdf(repo);
+        service.convertPdf(repo);
         return () -> req.getRequestDispatcher(Path.MAIL_PATH).forward(req, resp);
     }
 }
