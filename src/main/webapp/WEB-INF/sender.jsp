@@ -3,7 +3,7 @@
 <html>
 <head>
     <%@ include file="frame/head.html" %>
-    <title>Sender</title>
+    <title>Загрузка</title>
 </head>
 <body>
 <%@ include file="frame/header.html" %>
@@ -15,11 +15,11 @@
                     <form action="${pageContext.request.contextPath}/rest/upload"
                           method="post" enctype="multipart/form-data">
                         <div class="form-group">
-                            <input name="xls" id="xls" type="file"/>
+                            <input required name="xls" id="xls" type="file"/>
                         </div>
                         <div class="form-group">
                             <button class="btn-success btn" name="upload">
-                                Upload</button>
+                                Загрузить excel файл</button>
                         </div>
                         <input type="hidden" name="login" value="${sessionScope.login}">
                     </form>

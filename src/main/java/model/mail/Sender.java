@@ -43,7 +43,7 @@ public class Sender {
             message.setText(text);
 
             BodyPart messageBodyPart = new MimeBodyPart();
-            messageBodyPart.setText("attached pdf");
+            messageBodyPart.setText(text + "\nattached pdf file");
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart);
 

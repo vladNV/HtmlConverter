@@ -55,7 +55,7 @@ public class FileUploadService {
                     .build();
         }
         String uploadedFileLocation = UPLOAD_FOLDER + "\\" +
-                System.currentTimeMillis() + ".xlsx";
+                System.currentTimeMillis() + ".xls";
         try {
             saveToFile(uploadedInputStream, uploadedFileLocation);
             uploadedInputStream.close();

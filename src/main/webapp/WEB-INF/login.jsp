@@ -3,7 +3,7 @@
 <html>
 <head>
     <%@ include file="frame/head.html" %>
-    <title>Login</title>
+    <title>Авторизация</title>
 </head>
 <body>
 <%@ include file="frame/header.html" %>
@@ -15,16 +15,16 @@
                 <form method="post"
                         action="${pageContext.request.contextPath}/site/login">
                     <div class="form-group">
-                        <input class="form-control" id="login"
+                        <input class="form-control" id="login" required
                         name="login" placeholder="enter your login">
                     </div>
                     <div class="form-group">
                         <input class="form-control" id="password"
                         name="password" placeholder="enter your password"
-                        type="password">
+                        type="password" required>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-success">sign in</button>
+                        <button class="btn btn-success">Авторизироваться</button>
                     </div>
                 </form>
             </div>

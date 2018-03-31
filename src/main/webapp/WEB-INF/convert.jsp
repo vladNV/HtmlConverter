@@ -3,7 +3,7 @@
 <html>
 <head>
     <%@ include file="frame/head.html" %>
-    <title>Sender</title>
+    <title>Конвертация</title>
 </head>
 <body>
 <%@ include file="frame/header.html" %>
@@ -14,10 +14,9 @@
             <div class="col-sm-8 main-div">
                 <form action="${pageContext.request.contextPath}/site/convert"
                       method="post">
-                    <h3>Information</h3>
                     <div class="form-group">
                         <button class="btn-success btn" name="upload">
-                            Convert</button>
+                            Конвертировать в pdf</button>
                     </div>
                     <form method="post"
                             action="${pageContext.request.contextPath}/site/logout">

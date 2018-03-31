@@ -3,7 +3,7 @@
 <html>
 <head>
     <%@ include file="frame/head.html" %>
-    <title>Congratulation</title>
+    <title>Поздравления</title>
 </head>
 <body>
 <%@ include file="frame/header.html" %>
@@ -15,15 +15,17 @@
                 <h3><span style="color:green;">
                     Сообщение было успешно отправлено !
                 </span></h3>
-                <button type="button" onclick="window.location.href = '${pageContext}'"
-                        class="btn btn-danger">Назад</button>
-                <br>
+                <div style="margin: 50px 0;">
+                    <button type="button" onclick="window.location.href = '/'"
+                            class="btn btn-danger">Назад</button>
+                </div>
                 <form method="post"
                       action="${pageContext.request.contextPath}/site/logout">
-                    <button style="margin-bottom: 300px;"
-                            class="btn btn-danger">
-                        Закончить сессию
-                    </button>
+                    <div class="form-group">
+                        <button class="btn btn-danger">
+                            Закончить сессию
+                        </button>
+                    </div>
                 </form>
             </div>
             <div class="col-sm-2"></div>

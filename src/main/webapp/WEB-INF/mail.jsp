@@ -3,7 +3,7 @@
 <html>
 <head>
     <%@ include file="frame/head.html" %>
-    <title>Login</title>
+    <title>Отправка письма</title>
 </head>
 <body>
 <%@ include file="frame/header.html" %>
@@ -16,19 +16,19 @@
                       action="${pageContext.request.contextPath}/site/mail">
                     <div class="form-group">
                         <input class="form-control" id="from"
-                               name="from" placeholder="enter your email">
+                               name="from" placeholder="Отправителя (необязательно)">
                     </div>
                     <div class="form-group">
                         <input class="form-control" id="to"
-                               name="to" placeholder="enter receiver">
+                               required name="to" placeholder="Введите получателя">
                     </div>
                     <div class="form-group">
                         <input class="form-control" id="subject"
-                               name="subject" placeholder="enter some subject">
+                               required name="subject" placeholder="Введите тему письма">
                     </div>
                     <div class="form-group">
                         <input class="form-control" id="text"
-                               name="text" placeholder="enter some text">
+                               required name="text" placeholder="Введите какой нибудь текст">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success">Отправить письмо</button>

@@ -10,6 +10,6 @@ public class LogoutCmd implements Action {
                          HttpServletResponse resp) {
         HttpSession session = req.getSession();
         session.invalidate();
-        return () -> resp.sendRedirect(Path.INDEX);
+        return () -> resp.sendRedirect("/");
     }
 }
