@@ -1,0 +1,41 @@
+* {
+    font-family: Arial, serif;
+}
+
+body {
+    margin: 0;
+}
+.t {
+    display: table;
+    width: 100%;
+}
+.r {
+    display: table-row;
+    width: 100%;
+}
+.c {
+    display: table-cell;
+    margin: 10px;
+    border: 1px solid black;
+}
+.title {
+    font-size: 24pt;
+    color: blue;
+    font-weight: bold;
+}
+.c100 {
+    width: 100px;
+}
+.c200 {
+    width: 200px;
+}
+
+.c150{
+    width: 150px;
+}
+
+.blue {
+    font-size: 16pt;
+    color: blue;
+}
+

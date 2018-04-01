@@ -9,6 +9,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public class ConvertPdfService {
     private static final ResourceBundle resource;
@@ -20,7 +21,8 @@ public class ConvertPdfService {
     private static final int COLUMN_TABLE_1;
     private static final int COLUMN_TABLE_2;
     private static final int COLUMN_TABLE_3;
-    private static final int COLUMN_SIZE = 4;
+    private static final int COLUMN_TABLE_4;
+    private static final int COLUMN_SIZE = 5;
 
     static {
         resource = ResourceBundle.getBundle("config");
@@ -38,6 +40,8 @@ public class ConvertPdfService {
                 .getString("column-table-2"));
         COLUMN_TABLE_3 = Integer.parseInt(resource
                 .getString("column-table-3"));
+        COLUMN_TABLE_4 = Integer.parseInt(resource
+                .getString("column-table-4"));
     }
 
     public List<String> convertPdf(UnitWorkRepo repo) {
@@ -62,19 +66,26 @@ public class ConvertPdfService {
             table[3] = stream
                     .sheet(SHEET_TABLE)
                     .getValueFrom(COLUMN_TABLE_3).toArray(new String[0]);
+            table[4] = stream
+                    .sheet(SHEET_TABLE)
+                    .getValueFrom(COLUMN_TABLE_4).toArray(new String[0]);
         } catch (Exception e) {
             e.printStackTrace();
         }
         path = path.replaceAll("(xlsx|xls)", "pdf");
-        try (PdfStream stream = new PdfStream()){
-                stream.setPath(path).createPdf().opendocument().writeLines(lines);
+        try (PdfStream stream = new PdfStream()) {
             table = MathHelper.transport(table);
-                stream.writeAsTable(table);
+                stream.setPath(path).createPdf().opendocument()
+                        .write(withoutEmpty(lines), table);
             repo.push("pdf", path);
             repo.push("size", new File(path).length());
         } catch (Exception e) {
             e.printStackTrace();
         }
         return lines;
+    }
+
+    private List<String> withoutEmpty(List<String> list) {
+        return list.stream().filter(l -> !l.isEmpty()).collect(Collectors.toList());
     }
 }

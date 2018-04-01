@@ -123,13 +123,62 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.itextpdf/layout -->
-        <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>layout</artifactId>
-            <version>7.0.0</version>
-        </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>kernel</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>io</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>layout</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>forms</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>pdfa</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>sign</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>barcodes</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>font-asian</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.itextpdf</groupId>
+        <artifactId>hyph</artifactId>
+        <version>7.0.2</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -142,6 +191,14 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.45</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.pdfcrowd/pdfcrowd -->
+        <dependency>
+            <groupId>com.pdfcrowd</groupId>
+            <artifactId>pdfcrowd</artifactId>
+            <version>4.3.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

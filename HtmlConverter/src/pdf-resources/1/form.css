@@ -1,0 +1,311 @@
+body {
+    margin: 0;
+}
+#pdf2 {
+    width:909px; height:1286px; -moz-transform:scale(1); z-index: 0;
+}
+#p2 {overflow: hidden; position: relative; width: 909px; height: 1286px; margin-top:20px; background-color: white;}
+#t1_1{left:46px;top:60px;}
+#t2_1{left:248px;top:99px;}
+#t3_1{left:212px;top:173px;}
+#t4_1{left:321px;top:231px;}
+#t5_1{left:49px;top:339px;}
+#t6_1{left:217px;top:339px;}
+#t7_1{left:49px;top:364px;}
+#t8_1{left:208px;top:364px;}
+#t9_1{left:321px;top:339px;}
+#ta_1{left:463px;top:339px;}
+#tb_1{left:321px;top:364px;}
+#tc_1{left:465px;top:364px;}
+#td_1{left:594px;top:339px;}
+#te_1{left:692px;top:339px;}
+#tf_1{left:715px;top:339px;}
+#tg_1{left:594px;top:364px;}
+#th_1{left:676px;top:364px;}
+#ti_1{left:715px;top:364px;}
+#tj_1{left:735px;top:364px;}
+#tk_1{left:49px;top:452px;}
+#tl_1{left:49px;top:477px;}
+#tm_1{left:243px;top:452px;}
+#tn_1{left:243px;top:483px;}
+#to_1{left:243px;top:501px;}
+#tp_1{left:49px;top:529px;}
+#tq_1{left:49px;top:553px;}
+#tr_1{left:243px;top:529px;}
+#ts_1{left:243px;top:559px;}
+#tt_1{left:243px;top:578px;}
+#tu_1{left:49px;top:605px;}
+#tv_1{left:49px;top:629px;}
+#tw_1{left:243px;top:605px;}
+#tx_1{left:243px;top:636px;}
+#ty_1{left:243px;top:654px;}
+#tz_1{left:49px;top:741px;}
+#t10_1{left:49px;top:759px;}
+#t11_1{left:49px;top:778px;}
+#t12_1{left:49px;top:796px;}
+#t13_1{left:49px;top:814px;}
+#t14_1{left:122px;top:814px;}
+#t15_1{left:49px;top:833px;}
+#t16_1{left:49px;top:851px;}
+#t17_1{left:49px;top:869px;}
+#t18_1{left:49px;top:888px;}
+#t19_1{left:49px;top:906px;}
+#t1a_1{left:564px;top:906px;}
+#t1b_1{left:49px;top:969px;}
+#t1c_1{left:317px;top:969px;}
+#t1d_1{left:49px;top:993px;}
+#t1e_1{left:241px;top:993px;}
+#t1f_1{left:320px;top:993px;}
+#t1g_1{left:333px;top:1011px;}
+#t1h_1{left:619px;top:969px;}
+#t1i_1{left:740px;top:969px;}
+#t1j_1{left:619px;top:993px;}
+#t1k_1{left:725px;top:993px;}
+#t1l_1{left:49px;top:1089px;}
+#t1m_1{left:744px;top:339px;}
+.t {
+    -webkit-transform-origin: top left;
+    -moz-transform-origin: top left;
+    -o-transform-origin: top left;
+    -ms-transform-origin: top left;
+    -webkit-transform: scale(0.25);
+    -moz-transform: scale(0.25);
+    -o-transform: scale(0.25);
+    -ms-transform: scale(0.25);
+    z-index: 2;
+    position: absolute;
+    white-space: pre;
+    overflow: visible;
+}
+.s1_1{
+    FONT-SIZE: 110px;
+    FONT-FAMILY: TimesNewRomanPS-BoldMT_16,serif;
+    color: rgb(0,0,255);
+}
+.s2_1{
+    FONT-SIZE: 98px;
+    FONT-FAMILY: TimesNewRomanPSMT_18,serif;
+    color: rgb(0,0,255);
+}
+.s3_1{
+    FONT-SIZE: 171px;
+    FONT-FAMILY: TimesNewRomanPS-BoldMT_16,serif;
+    color: rgb(0,0,0);
+}
+.s4_1{
+    FONT-SIZE: 122px;
+    FONT-FAMILY: TimesNewRomanPSMT_18,serif;
+    color: rgb(0,0,0);
+}
+.s5_1{
+    FONT-SIZE: 73px;
+    FONT-FAMILY: TimesNewRomanPSMT_18,serif;
+    color: rgb(0,0,0);
+}
+.s6_1{
+    FONT-SIZE: 49px;
+    FONT-FAMILY: TimesNewRomanPSMT_18,serif;
+    color: rgb(0,0,0);
+}
+.s7_1{
+    FONT-SIZE: 49px;
+    FONT-FAMILY: TimesNewRomanPSMT_18,serif;
+    color: rgb(0,0,255);
+}
+.s8_1{
+    FONT-SIZE: 49px;
+    FONT-FAMILY: TimesNewRomanPS-ItalicMT_1a,serif;
+    color: rgb(0,0,0);
+}
+.s9_1{
+    FONT-SIZE: 73px;
+    FONT-FAMILY: TimesNewRomanPSMT_8,serif;
+    color: rgb(0,0,0);
+}
+@font-face {
+    font-family: TimesNewRomanPS-ItalicMT_1a;
+    src: url("fonts/TimesNewRomanPS-ItalicMT_1a.woff") format("woff");
+}
+@font-face {
+    font-family: TimesNewRomanPS-BoldMT_16;
+    src: url("fonts/TimesNewRomanPS-BoldMT_16.woff") format("woff");
+}
+@font-face {
+    font-family: TimesNewRomanPSMT_8;
+    src: url("fonts/TimesNewRomanPSMT_8.woff") format("woff");
+}
+@font-face {
+    font-family: TimesNewRomanPSMT_18;
+    src: url("fonts/TimesNewRomanPSMT_18.woff") format("woff");
+}
+#pg1Overlay{
+    width:100%; height:100%; position:absolute; z-index:1; background-color:rgba(0,0,0,0);      -webkit-user-select: none;
+}
+#pg1{
+    width:909px; height:1286px; -moz-transform:scale(1); z-index: 0;
+}
+#t1_2{left:46px;top:356px;}
+#t2_2{left:46px;top:380px;}
+#t3_2{left:49px;top:196px;}
+#t4_2{left:49px;top:223px;}
+#t5_2{left:49px;top:248px;}
+#t6_2{left:321px;top:196px;}
+#t7_2{left:367px;top:196px;}
+#t8_2{left:321px;top:226px;}
+#t9_2{left:321px;top:244px;}
+#ta_2{left:49px;top:275px;}
+#tb_2{left:49px;top:299px;}
+#tc_2{left:321px;top:275px;}
+#td_2{left:321px;top:306px;}
+#te_2{left:321px;top:324px;}
+#tf_2{left:72px;top:429px;}
+#tg_2{left:177px;top:411px;}
+#th_2{left:130px;top:429px;}
+#ti_2{left:156px;top:448px;}
+#tj_2{left:342px;top:411px;}
+#tk_2{left:322px;top:429px;}
+#tl_2{left:388px;top:448px;}
+#tm_2{left:527px;top:420px;}
+#tn_2{left:511px;top:438px;}
+#to_2{left:703px;top:420px;}
+#tp_2{left:685px;top:438px;}
+#tq_2{left:74px;top:472px;}
+#tr_2{left:189px;top:472px;}
+#ts_2{left:378px;top:472px;}
+#tt_2{left:556px;top:472px;}
+#tu_2{left:742px;top:472px;}
+#tv_2{left:74px;top:497px;}
+#tw_2{left:189px;top:497px;}
+#tx_2{left:378px;top:497px;}
+#ty_2{left:556px;top:497px;}
+#tz_2{left:742px;top:497px;}
+#t10_2{left:69px;top:521px;}
+#t11_2{left:189px;top:521px;}
+#t12_2{left:378px;top:521px;}
+#t13_2{left:556px;top:521px;}
+#t14_2{left:742px;top:521px;}
+#t15_2{left:69px;top:545px;}
+#t16_2{left:189px;top:545px;}
+#t17_2{left:378px;top:545px;}
+#t18_2{left:556px;top:545px;}
+#t19_2{left:742px;top:545px;}
+#t1a_2{left:69px;top:570px;}
+#t1b_2{left:189px;top:570px;}
+#t1c_2{left:378px;top:570px;}
+#t1d_2{left:556px;top:570px;}
+#t1e_2{left:742px;top:570px;}
+#t1f_2{left:69px;top:594px;}
+#t1g_2{left:204px;top:594px;}
+#t1h_2{left:378px;top:594px;}
+#t1i_2{left:556px;top:594px;}
+#t1j_2{left:742px;top:594px;}
+#t1k_2{left:69px;top:619px;}
+#t1l_2{left:189px;top:619px;}
+#t1m_2{left:378px;top:619px;}
+#t1n_2{left:556px;top:619px;}
+#t1o_2{left:742px;top:619px;}
+#t1p_2{left:69px;top:643px;}
+#t1q_2{left:189px;top:643px;}
+#t1r_2{left:378px;top:643px;}
+#t1s_2{left:556px;top:643px;}
+#t1t_2{left:742px;top:643px;}
+#t1u_2{left:49px;top:707px;}
+#t1v_2{left:49px;top:726px;}
+#t1w_2{left:554px;top:726px;}
+#t1x_2{left:49px;top:744px;}
+#t1y_2{left:49px;top:762px;}
+#t1z_2{left:49px;top:781px;}
+#t20_2{left:154px;top:781px;}
+#t21_2{left:49px;top:799px;}
+#t22_2{left:49px;top:869px;}
+#t23_2{left:49px;top:894px;}
+#t24_2{left:304px;top:869px;}
+#t25_2{left:304px;top:900px;}
+#t26_2{left:304px;top:918px;}
+#t27_2{left:304px;top:937px;}
+#t28_2{left:304px;top:955px;}
+#t29_2{left:49px;top:1013px;}
+#t2a_2{left:502px;top:1013px;}
+#t2b_2{left:49px;top:1037px;}
+#t2c_2{left:398px;top:1037px;}
+#t2d_2{left:498px;top:1037px;}
+#t2e_2{left:519px;top:1056px;}
+#t2f_2{left:55px;top:43px;}
+#t2g_2{left:55px;top:73px;}
+#t2h_2{left:55px;top:102px;}
+#t2i_2{left:223px;top:102px;}
+#t2j_2{left:55px;top:126px;}
+#t2k_2{left:220px;top:126px;}
+#t2l_2{left:592px;top:102px;}
+#t2m_2{left:699px;top:102px;}
+#t2n_2{left:736px;top:102px;}
+#t2o_2{left:776px;top:102px;}
+#t2p_2{left:592px;top:126px;}
+#t2q_2{left:680px;top:126px;}
+#t2r_2{left:738px;top:126px;}
+#t2s_2{left:757px;top:126px;}
+.s1_2{
+    FONT-SIZE: 73px;
+    FONT-FAMILY: TimesNewRomanPSMT_18,serif;
+    color: rgb(0,0,0);
+}
+.s2_2{
+    FONT-SIZE: 48px;
+    FONT-FAMILY: TimesNewRomanPSMT_18,serif;
+    color: rgb(0,0,0);
+}
+.s3_2{
+    FONT-SIZE: 48px;
+    FONT-FAMILY: TimesNewRomanPSMT_18,serif;
+    color: rgb(0,0,255);
+}
+.s4_2{
+    FONT-SIZE: 73px;
+    FONT-FAMILY: TimesNewRomanPS-BoldMT_16,serif;
+    color: rgb(0,0,0);
+}
+.s5_2{
+    FONT-SIZE: 48px;
+    FONT-FAMILY: TimesNewRomanPS-ItalicMT_1a,serif;
+    color: rgb(0,0,0);
+}
+.s6_2{
+    FONT-SIZE: 85px;
+    FONT-FAMILY: TimesNewRomanPS-BoldMT_4,serif;
+    color: rgb(0,0,0);
+}
+.s7_2{
+    FONT-SIZE: 67px;
+    FONT-FAMILY: TimesNewRomanPSMT_8,serif;
+    color: rgb(0,0,0);
+}
+.s8_2{
+    FONT-SIZE: 73px;
+    FONT-FAMILY: TimesNewRomanPSMT_8,serif;
+    color: rgb(0,0,0);
+}
+.s9_2{
+    FONT-SIZE: 49px;
+    FONT-FAMILY: TimesNewRomanPSMT_8,serif;
+    color: rgb(0,0,0);
+}
+@font-face {
+    font-family: TimesNewRomanPS-BoldMT_4;
+    src: url("fonts/TimesNewRomanPS-BoldMT_4.woff") format("woff");
+}
+@font-face {
+    font-family: TimesNewRomanPS-ItalicMT_1a;
+    src: url("fonts/TimesNewRomanPS-ItalicMT_1a.woff") format("woff");
+}
+@font-face {
+    font-family: TimesNewRomanPS-BoldMT_16;
+    src: url("fonts/TimesNewRomanPS-BoldMT_16.woff") format("woff");
+}
+@font-face {
+    font-family: TimesNewRomanPSMT_8;
+    src: url("fonts/TimesNewRomanPSMT_8.woff") format("woff");
+}
+@font-face {
+    font-family: TimesNewRomanPSMT_18;
+    src: url("fonts/TimesNewRomanPSMT_18.woff") format("woff");
+}
