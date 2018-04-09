@@ -230,7 +230,7 @@
                     <username>vlad</username>
                     <password>610917</password>
                     <update>true</update>
-                    <url>http://localhost:8080</url>
+                    <url>http://localhost:8080/manager/text</url>
                     <path>/</path>
                 </configuration>
             </plugin>
